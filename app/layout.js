@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: "Vaibhav's Valentine",
-  description: "Vaibhav's Valentine Card",
+  description: "Vaibhav's Valentine Card 2026",
 };
 
 export default function RootLayout({ children }) {
