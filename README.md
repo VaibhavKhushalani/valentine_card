@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💖 Valentine Card – Interactive Next.js App
 
-## Getting Started
+A cute, romantic, and playful Valentine card built with **Next.js App Router**, featuring:
+- Progressive questions
+- A playful “No” button
+- A romantic YES flow
+- Smooth card flip animation
+- Mobile-responsive baby-pink theme
 
-First, run the development server:
+Perfect for creating a fun and memorable Valentine proposal 💌
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- 🐱 Cute Valentine flow with images  
+- 💕 Progressive questions on “No”  
+- 😈 Dodging “No” button  
+- 🔄 Card flip animation for final reveal  
+- 📱 Fully mobile responsive  
+- 🎨 Soft romantic pink theme  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Next.js (App Router)**
+- **React**
+- **CSS + Tailwind base**
+- **Next/Image**
+- **Client-side state management**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📂 Project Structure
 
-## Deploy on Vercel
+app/
+├─ page.js          → Main UI & logic
+├─ layout.js        → App layout
+├─ globals.css      → Global + theme styles
+├─ helper-text.js   → ALL content (texts, buttons, images)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+public/
+└─ images (cats, gifts, etc.)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🧠 How the Flow Works
+
+| Step Value | Meaning |
+|-----------|--------|
+| step > 0 | Normal questions (No flow) |
+| step === 0 | YES accepted screen |
+| step === -1 | Back side (final romantic reveal) |
+
+---
+
+## ✏️ How to Change Content (IMPORTANT)
+
+👉 **All text & images live in `helper-text.js`**  
+You never need to touch `page.js` to update content.
+
+---
+
+### 1️⃣ Change the subtitle at the top
+
+export const subTitle = "Valentine's 2026";
+
+---
+
+### 2️⃣ Change the question flow
+
+Edit `textArray` in helper-text.js
+
+---
+
+### 3️⃣ Change YES screen text
+
+Edit `yesTextObject` in helper-text.js
+
+---
+
+### 4️⃣ Change final back-card reveal
+
+Edit `backCardTextObject` in helper-text.js
+
+---
+
+## 🖼️ Change Images
+
+Place images inside `/public` and update paths.
+
+---
+
+## 🚀 Run Locally
+
+npm install  
+npm run dev  
+
+Open http://localhost:3000
+
+---
+
+## ❤️ Made With Love
+
+Built to make someone smile, laugh, and feel special.
+
+Made with love ❤️
