@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Vaibhav's Valentine",
-  description: "Vaibhav's Valentine Card 2026",
+  title: "Valentine Card 2026",
+  description: "Valentine Card 2026",
 };
 
 export default function RootLayout({ children }) {
