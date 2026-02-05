@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* =========================
+  COLOR VARIABLES
+   ========================= */
+
+:root {
+  --color-text: #b1124a; /* Deeper rose for readability */
+  --color-text-soft: #8c3a5a; /* For sub text */
+  --gradient-start: #ff9a9e;
+  --gradient-end: #fad0c4;
+
+  /* 🔥 Card now darker */
+  --card-bg: #ffe0e9; /* Soft blush pink */
+
+  --accent-pink: #ff5c8a;
+  --accent-pink-dark: #e63b6f;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+/* =========================
+   GLOBAL STYLES
+   ========================= */
+body {
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center wrapper */
+.main-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   FLIP SCENE
+   ========================= */
+.card-scene {
+  perspective: 1000px;
+}
+
+.card-wrapper {
+  position: relative;
+  width: 450px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.card-wrapper.flipped {
+  transform: rotateY(-180deg);
+}
+
+/* =========================
+   CARD
+   ========================= */
+.card {
+  border: 1px solid rgba(255, 92, 138, 0.25);
+
+  inset: 0;
+  background: linear-gradient(135deg, #ffe0e9, #ffd1dd);
+  border-radius: 1.4rem;
+  padding: 1.7rem;
+  box-shadow:
+    0 14px 30px rgba(255, 92, 138, 0.35),
+    0 6px 14px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Front & Back */
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(-180deg);
+}
+
+/* =========================
+   TEXT
+   ========================= */
+.sub-title {
+  background: linear-gradient(135deg, #ff8fb1, #ff5c8a);
+  color: white;
+  border-radius: 999px;
+  padding: 6px 14px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+.heading {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.sub-heading {
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.6;
+  color: var(--color-text-soft);
+  opacity: 0.9;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+.button-group {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+button {
+  flex: 1;
+  background: linear-gradient(
+    135deg,
+    var(--accent-pink),
+    var(--accent-pink-dark)
+  );
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem;
+  font-size: 15px;
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 6px 12px rgba(255, 92, 138, 0.35);
+}
+
+/* Yes button hover */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 92, 138, 0.45);
+}
+
+/* No button dodge */
+.btn-no:hover {
+  transform: translate(28px, -6px);
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
+  .card-wrapper {
+    width: 92vw;
+    max-width: 380px;
+  }
+
+  .card {
+    padding: 1.4rem;
+  }
+
+  .heading {
+    font-size: 20px;
+  }
+
+  .sub-heading {
+    font-size: 13.5px;
+  }
+}
+
+
+@media (max-width: 420px) {
+  .card-wrapper {
+    width: 94vw;
+  }
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .sub-heading {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.85rem;
+    font-size: 14px;
+  }
+}
+
