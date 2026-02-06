@@ -43,9 +43,9 @@ export default function Home() {
         width={step === -1 ? 250 : 160}
         height={100}
         sizes="(max-width: 640px) 160px, 250px"
-        quality={65}
-        priority={step === -1}
-        loading={step === -1 ? "eager" : "lazy"}
+        quality={50}
+        priority={true}
+        loading={"eager"}
       />
 
       <h1 className="heading">{item.heading}</h1>
