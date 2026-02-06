@@ -42,7 +42,12 @@ export default function Home() {
         src={item.image}
         width={step === -1 ? 250 : 160}
         height={100}
+        sizes="(max-width: 640px) 160px, 250px"
+        quality={65}
+        priority={step === -1}
+        loading={step === -1 ? "eager" : "lazy"}
       />
+
       <h1 className="heading">{item.heading}</h1>
       <p className="sub-heading">{item.subHeading}</p>
     </>
@@ -59,7 +64,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
