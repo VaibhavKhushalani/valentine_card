@@ -27,7 +27,7 @@ export const textArray = [
     subHeading: "Just one yes. That’s all I’m asking 😭",
     yesBtn: "Okay okay, YES 😂",
     noBtn: "I’m still evil 😑",
-    image: "/cat_4.png",
+    image: "/cat_4.jpg",
   },
   {
     heading: "Looks like you’re stuck with me now 😌❤️",
