@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   backCardTextObject,
   subTitle,
@@ -13,6 +13,7 @@ import Image from "next/image.js";
 // step>0 No and its subsequent steps
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [step, setStep] = useState(1);
   const [flipCard, setFlipCard] = useState(false);
 
@@ -54,6 +55,29 @@ export default function Home() {
         ? backCardTextObject
         : textArray[step - 1];
 
+  // ⏳ Loading for 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="loading-screen">
+        <div className="loading-content">
+          <div className="heart">❤️</div>
+          <h1 className="loading-title">Just a moment…</h1>
+          <p className="loading-text">
+            Something sweet is getting ready for you 💕
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="main-body">
       <div className="card-scene">
@@ -67,7 +91,16 @@ export default function Home() {
                   <button onClick={handleYes}>{item.yesBtn}</button>
                 )}
                 {item.noBtn && (
-                  <button className="btn-no" onClick={handleNo}>
+                  <button
+                    className="btn-no"
+                    onClick={handleNo}
+                    style={{
+                      transform:
+                        step > 1
+                          ? `translate(${step * 10}px, ${step * 6}px)`
+                          : "translate(0, 0)",
+                    }}
+                  >
                     {item.noBtn}
                   </button>
                 )}
